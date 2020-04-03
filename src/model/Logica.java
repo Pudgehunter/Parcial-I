@@ -4,17 +4,20 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Logica {
 	
 	private PApplet app;
 	private LinkedList<Movies> movies;
+	private LinkedList<Imagenes> imagenes;
 	private añoMovies moviesAño;
 	private rateMovies moviesRate;
 	private tipoMovies moviesTipo;
-	String[] txtUno, txtDos, txtUnoSplit;
+	String[] txtUno, txtUnoSplit;
 	private String tipo, nombre;
 	private int rate, año;
+	
 	
 	public Logica(PApplet app) {
 		this.app = app;
@@ -23,13 +26,21 @@ public class Logica {
 		this.moviesTipo = new tipoMovies();
 		this.moviesAño = new añoMovies();
 		
+		
+		
 		//Agregar los textos importados de perros
 		txtUno = app.loadStrings("../data/imports/netflix.txt");
 		
 		//se crean los fors para poder imprimirlo
 		for (int i = 0; i < txtUno.length; i++) {
 			txtUnoSplit = txtUno[i].split(",");
+			
+//			if(txtUnoSplit[0].equals("Breaking Bad")) {
+//				imagenes.add(New Imagenes);
+//			}
+			
 			System.out.println(txtUnoSplit[2]);
+			System.out.println(txtUnoSplit[0]);
 			nombre = txtUnoSplit[0];
 			año = Integer.parseInt(txtUnoSplit[1]);
 			tipo = txtUnoSplit[3];

@@ -1,12 +1,14 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Movies implements Comparable<Movies>  {
 
 	private String nombreMovies, tipoMovies;
 	private PApplet app;
 	private int añoMovies, rateMovies, posY, posX;
+	private PImage[] allImage;
 	
 	public Movies(int añoMovies,String nombreMovies,String tipoMovies, int rateMovies,PApplet app) {
 		this.añoMovies = añoMovies;
@@ -15,6 +17,7 @@ public class Movies implements Comparable<Movies>  {
 		this.rateMovies = rateMovies;
 		this.app = app;
 		this.posX = 50;
+//	
 	}
 	
 	public void drawLetras(int posY, PApplet app) {
